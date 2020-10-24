@@ -45,6 +45,7 @@ componentDidMount(){
       <Toolbar toggleSidebar={this.toggleSidebar}/>
       <Sidebar showSidebar={this.state.showSidebar} toggleSidebar={this.toggleSidebar}/>
       <main className={css.Content}>
+        hi
     {this.props.userId ? 
             <Switch>
         <Route path='/logout' component={Logout}/>
