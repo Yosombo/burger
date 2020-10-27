@@ -1,8 +1,14 @@
 .Order {
   width: 80%;
-  border: 1px solid #eee;
-  box-shadow: 0 2px 3px #ccc;
+  border-bottom: 1px solid #eee;
   padding: 10px;
   margin: 10px auto;
   line-height: 1.6;
+  color: white;
+  font-size: 1.3rem;
+}
+@media (min-width: 500px) and (min-height: 400px) {
+  .Order {
+    width: 50%;
+  }
 }

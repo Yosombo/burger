@@ -1,77 +1,69 @@
-.BreadTop {
-  width: 80%;
-  height: 20%;
-  margin: auto;
-  background: linear-gradient(#bc581e, #e27b36);
-  border-radius: 50% 50% 0 0;
-  position: relative;
-}
-
-.Seed {
-  position: absolute;
-  width: 10%;
-  height: 15%;
-  background-color: #fff;
-  top: 50%;
-  left: 30%;
-  border-radius: 40%;
-  transform: rotate(-20deg);
-  box-shadow: inset -2px -3px #c9c9c9;
-}
-
-.Second {
-  top: 25%;
-  left: 50%;
-  transform: rotate(20deg);
-}
-
-.Third {
-  top: 35%;
-  left: 78%;
-  transform: rotate(-195deg);
-}
-
-.Fourth {
-  top: 45%;
-  left: 10%;
-  transform: rotate(-170deg);
-}
-
-.Salad {
-  width: 90%;
-  height: 7%;
-  margin: 2% auto;
-  background: linear-gradient(#228c1d, #91ce50);
-  border-radius: 20px;
-}
-
 .Meat {
-  width: 80%;
-  height: 8%;
-  background: linear-gradient(#7f3608, #702e05);
-  margin: 2% auto;
-  border-radius: 14px;
+  width: 300px;
+  position: absolute;
+  top: 140px;
+  transform: translateX(-50%);
+  z-index: 8;
 }
-
-.Cheese {
-  width: 91%;
-  height: 4.5%;
-  background: linear-gradient(#f4d004, #d6bb22);
-  margin: 2% auto;
-  border-radius: 20px;
+.Salad {
+  width: 300px;
+  position: absolute;
+  top: 90px;
+  transform: translateX(-50%);
+  z-index: 9;
 }
-
 .Bacon {
-  width: 80%;
-  height: 3%;
-  background: linear-gradient(#bf3813, #c45e38);
-  margin: 2% auto;
+  width: 300px;
+  position: absolute;
+  top: 190px;
+  transform: translateX(-50%);
+  z-index: 9;
 }
-
+.Cheese {
+  width: 300px;
+  position: absolute;
+  top: 120px;
+  transform: translateX(-50%);
+  z-index: 6;
+}
+.BreadTop {
+  width: 300px;
+  position: absolute;
+  transform: translateX(-50%);
+  z-index: 10;
+}
 .BreadBottom {
-  width: 80%;
-  height: 10%;
-  margin: auto;
-  background: linear-gradient(#bc581e, #e27b36);
-  border-radius: 0 0 20px 20px;
+  width: 300px;
+  position: absolute;
+  top: 220px;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+@media (min-width: 500px) and (min-height: 400px) {
+  .Meat {
+    width: 400px;
+    top: 180px;
+  }
+  .BreadBottom {
+    width: 400px;
+    top: 280px;
+  }
+  .BreadTop {
+    width: 400px;
+  }
+  .Cheese {
+    width: 400px;
+    top: 150px;
+  }
+  .Bacon {
+    width: 400px;
+    top: 250px;
+  }
+  .Salad {
+    width: 400px;
+    top: 115px;
+  }
+  .Meat {
+    width: 400px;
+  }
 }

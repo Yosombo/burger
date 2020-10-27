@@ -18,11 +18,13 @@ function Burger(props) {
   return (
     
     <div className={css.Burger}>
-      {/* burger gedeg eh component.ees Type gej uusgej uguud tuuniigee propsoor damjuulna */}
+
       
-      <BurgerIngredient type="breadTop" />
+    <BurgerIngredient type="breadTop" />
       {content}
       <BurgerIngredient type="breadBottom" />
+
+
       
     </div>
   );

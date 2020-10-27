@@ -47,7 +47,7 @@ const toggleSidebar = () =>{
 }
 
     return (
-    <div>
+    <div className={css.App}>
       <Toolbar toggleSidebar={toggleSidebar}/>
       <Sidebar showSidebar={showSidebar} toggleSidebar={toggleSidebar}/>
       <main className={css.Content}>

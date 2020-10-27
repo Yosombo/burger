@@ -12,8 +12,8 @@ const OrderPage =props => {
 
 
     return (
-        <div style={{textAlign: "center"}}>
-            <h4>Order history</h4>
+        <div style={{textAlign: "center", color: 'white'}}>
+            <h2>Order history</h2>
             
         {orderCtx.state.loading ? <Spinner/> : orderCtx.state.orders.map(el => <Order key={el[0]} order={el[1]}/>)}
         </div>

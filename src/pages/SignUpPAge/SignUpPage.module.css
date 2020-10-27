@@ -1,38 +1,47 @@
-@import url("https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap");
-
 .SignupPage {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  width: 90%;
+  font-family: "Rajdhani", sans-serif;
+  width: 100%;
   border: 1px solid #eee;
   box-sizing: border-box;
-  box-shadow: 0 2px 3px #ccc;
+  border-radius: 10px;
   padding: 20px;
   text-align: center;
   margin: 0 auto;
+  font-size: 1.2rem;
+}
+.SignupPage h3 {
+  color: white;
 }
 .SignupPage input {
-  font-family: "Syne Mono", monospace;
+  background-color: transparent;
+  font-family: "Rajdhani", sans-serif;
   display: block;
   font-size: 18px;
   padding: 5px;
-  width: 85%;
+  width: 80%;
+  color: white;
   border: none;
   border-bottom: 1px solid rgb(126, 126, 126);
-  margin: 25px auto;
+  margin: 20px auto;
   border-radius: 0;
+}
+.SignupPage input::placeholder {
+  color: rgb(180, 180, 180);
+}
+.SignupPage input:active {
+  color: white;
+  background-color: transparent;
 }
 .SignupPage input:focus {
   outline: none;
   border-radius: 0;
+  background-color: rgb(26, 26, 26);
 }
 @media (min-width: 600px) {
   .SignupPage {
-    width: 40%;
+    width: 80%;
   }
   .SignupPage input {
-    width: 80%;
+    width: 70%;
   }
 }
