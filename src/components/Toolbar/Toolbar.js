@@ -7,7 +7,7 @@ function Toolbar(props) {
   return (
     <header className={css.Toolbar}>
       <HamburgerMenu toggleSidebar={props.toggleSidebar}/>
-     <Logo/>
+      <Logo link="/" />
       <nav className={css.HideoOnMobile}>
         <Menu />
       </nav>

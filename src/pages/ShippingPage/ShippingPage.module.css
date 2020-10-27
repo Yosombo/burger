@@ -5,6 +5,8 @@
 }
 .ShippingPage h3 {
   color: #944317;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 @media (min-width: 600px) {
   .ShippingPage {

@@ -1,75 +1,64 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import css from './ContactData.module.css'
 import Button from '../General/Button/Button'
 import Spinner from '../General/Spinner/Spinner';
-import {withRouter} from 'react-router-dom'
-import { connect } from 'react-redux';
-import * as actions from '../../redux/actions/OrderActions';
-class ContactData extends Component {
-    state ={
-        name: null,
-        city: null,
-        street: null,
+import {useHistory} from 'react-router-dom'
+import BurgerContext from '../../Context/BurgerContext'
+import UserContext from '../../Context/UserContext';
+
+const ContactData = props => {
+    const history = useHistory();
+    const [name, setName] = useState();
+    const [city, setCity] = useState();
+    const [street, setStreet] = useState();
+    const burgerCtx = useContext(BurgerContext)
+    const userCtx = useContext(UserContext)
+    useEffect(() => {
+        if(burgerCtx.burger.finished && !burgerCtx.burger.error){
+            history.replace('/orders')
+        }
+        return () => {
+           burgerCtx.clearBurger()
+        }
+    },[burgerCtx.burger.finished])
+
+    const changeName= (e)=>{
+        setName(e.target.value)
+    }
+    const changeStreet= (e)=>{
+        setCity(e.target.value)
+    }
+    const changeCity= (e)=>{
+        setStreet(e.target.value)
     }
 
-    changeName= (e)=>{
-        this.setState({name: e.target.value})
-    }
-    changeStreet= (e)=>{
-        this.setState({street: e.target.value})
-    }
-    changeCity= (e)=>{
-        this.setState({city: e.target.value})
-    }
-
-    saveOrder = ()=>{
+    const saveOrder = ()=>{
     const order ={
-      userId: this.props.userId,
-      ingredients: this.props.ingredients,
-      totalPrice: this.props.totalPrice,
+      userId: userCtx.state.userId,
+      ingredients: burgerCtx.burger.ingredients,
+      totalPrice: burgerCtx.burger.totalPrice,
       address: {
-        name: this.state.name,
-        city: this.state.city,
-        street: this.state.street
+        name,
+        city,
+        street
       },
     }
 
-    this.props.saveOrderAction(order)
+    burgerCtx.saveBurger(order, userCtx.state.token)
 
     }
-    componentDidUpdate(){
-        if(this.props.newOrderStatus.finished && !this.props.newOrderStatus.error){
-            this.props.history.replace('/orders')
-        }
-    }
 
-    render() {
+    return (
+        <div className={css.ContactData}>
+            {burgerCtx.burger.saving ? <Spinner/> : (<div>
+            <input onChange={changeName} type="text" name='name' placeholder='Name'/>
+            <input onChange={changeStreet} type="text" name='street' placeholder='Street'/>
+            <input onChange={changeCity} type="text" name='city' placeholder='City'/>
+            <Button text="SUBMIT" btnType="Success" clicked={saveOrder}/>
+            </div>)}      
+        </div>
+    )
     
-        return (
-            <div className={css.ContactData}>
-                {this.props.newOrderStatus.saving ? <Spinner/> : (<div>
-                <input onChange={this.changeName} type="text" name='name' placeholder='Name'/>
-               <input onChange={this.changeStreet} type="text" name='street' placeholder='Street'/>
-               <input onChange={this.changeCity} type="text" name='city' placeholder='City'/>
-               <Button text="SUBMIT" btnType="Success" clicked={this.saveOrder}/>
-                </div>)}      
-            </div>
-        )
-    }
 }
 
-const mapStateToProps = state => {
-return{
-    totalPrice: state.BurgerReducer.totalPrice,
-    ingredients: state.BurgerReducer.ingredients,
-    newOrderStatus: state.OrderReducer.newOrder,
-    userId: state.SignupLoginReducer.userId
-}
-}
-const mapDispatchToProps = dispatch =>{
-    return{
-        saveOrderAction: (newOrder)=> dispatch(actions.saveOrder(newOrder))
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(ContactData))
+export default ContactData

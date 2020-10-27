@@ -1,33 +1,24 @@
-import React, { Component } from 'react'
+import React, { useEffect, useContext } from 'react'
 import Spinner from '../../components/General/Spinner/Spinner'
 import Order from '../../components/Order/Order'
-import * as actions from '../../redux/actions/OrderActions'
-import { connect } from 'react-redux';
-export class OrderPage extends Component {
+import OrderContext from '../../Context/OrderContext'
+import UserContext from '../../Context/UserContext';
+const OrderPage =props => {
+    const userCtx =  useContext(UserContext)
+    const orderCtx = useContext(OrderContext)
+    useEffect(()=>{
+        orderCtx.loadOrders(userCtx.state.userId, userCtx.state.token);
+    },[])
 
-    componentDidMount=()=>{
-        this.props.loadOrders(this.props.userId);
-      }
-    render() {
 
-        return (
-            <div>
-            {this.props.loading ? <Spinner/> : this.props.orders.map(el => <Order key={el[0]} order={el[1]}/>)}
-            </div>
-        )
-    }
-}
-const mapStateToProps = state =>{
-    return{
-        orders: state.OrderReducer.orders,
-        loading: state.OrderReducer.loading,
-        userId: state.SignupLoginReducer.userId
-    }
-}
-const mapDispatchToProps = dispatch =>{
-    return{
-        loadOrders: (userId)=> dispatch(actions.loadOrders(userId))
-    }
+    return (
+        <div style={{textAlign: "center"}}>
+            <h4>Order history</h4>
+            
+        {orderCtx.state.loading ? <Spinner/> : orderCtx.state.orders.map(el => <Order key={el[0]} order={el[1]}/>)}
+        </div>
+    )
+    
 }
 
-export default connect(mapStateToProps,mapDispatchToProps)(OrderPage)
+export default (OrderPage)

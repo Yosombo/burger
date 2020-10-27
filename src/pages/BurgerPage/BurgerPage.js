@@ -1,56 +1,41 @@
-import React, { Component } from "react";
-import Spinner from "../../components/General/Spinner/Spinner";
+import React, { useState } from "react";
 import Burger from "../../components/Burger/Burger";
 import BuildControls from "../../components/BuildControls/BuildControls";
 import Modal from "../../components/General/Modal/Modal";
 import OrderSummery from "../../components/OrderSummery/OrderSummery";
-import { withRouter } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
-
-
-
-class BurgerPage extends Component {
-  state = {
-    confirmOrder: false,
-  };
-
-
-  continueOrder =()=>{
-
-  this.props.history.push({
+const BurgerPage =(props) =>{ 
+  const history =useHistory()
+  const [confirmOrder, setConfirmOrder] = useState(false)
+  
+  const continueOrder =()=>{
+    history.push({
     pathname: '/ship',
-})
-  this.closeConfirmModal()
+    })
+  closeConfirmModal()
   }
 
-  showConfirmModal = () => {
-    this.setState({ confirmOrder: true });
+  const showConfirmModal = () => {
+    setConfirmOrder(true);
   };
 
-  closeConfirmModal = () => {
-    this.setState({ confirmOrder: false });
+  const closeConfirmModal = () => {
+    setConfirmOrder(false)
   };
 
-  render() {
 
-    return (
-      <div>
-        <Modal show={this.state.confirmOrder} closeConfirmModal={this.closeConfirmModal}>
-          {this.state.loading ? <Spinner/> : 
-          <OrderSummery
-          onCancel={this.closeConfirmModal}
-          onContinue={this.continueOrder}
-          />}
-        </Modal>
 
-        <Burger/>
-
-        <BuildControls
-          showConfirmModal={this.showConfirmModal}
-        />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <Modal show={confirmOrder} closeConfirmModal={closeConfirmModal}>
+      <OrderSummery onCancel={closeConfirmModal} onContinue={continueOrder}/>
+      </Modal>
+      <Burger/>
+      <BuildControls showConfirmModal={showConfirmModal}/>
+    </div>
+  );
+  
 }
 
-export default withRouter(BurgerPage) ;
+export default BurgerPage;

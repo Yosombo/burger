@@ -1,10 +1,14 @@
 import React from 'react'
 import css from './Logo.module.css'
 import logoImage from '../../assets/images/burger-logo.png'
-function Logo() {
+import {NavLink}from 'react-router-dom'
+const Logo = props => {
     return (
         <div className={css.Logo}>
-            <img src={logoImage} alt="logo"/>
+        <NavLink to="/">
+           <img src={logoImage} alt="logo"/>
+        </NavLink>
+
         </div>
     )
 }

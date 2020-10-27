@@ -1,5 +1,11 @@
-.SignUp {
-  width: 80%;
+@import url("https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap");
+
+.SignupPage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  width: 90%;
   border: 1px solid #eee;
   box-sizing: border-box;
   box-shadow: 0 2px 3px #ccc;
@@ -7,10 +13,26 @@
   text-align: center;
   margin: 0 auto;
 }
-.SignUp input {
+.SignupPage input {
+  font-family: "Syne Mono", monospace;
   display: block;
   font-size: 18px;
   padding: 5px;
-  width: 60%;
-  margin: 10px auto;
+  width: 85%;
+  border: none;
+  border-bottom: 1px solid rgb(126, 126, 126);
+  margin: 25px auto;
+  border-radius: 0;
+}
+.SignupPage input:focus {
+  outline: none;
+  border-radius: 0;
+}
+@media (min-width: 600px) {
+  .SignupPage {
+    width: 40%;
+  }
+  .SignupPage input {
+    width: 80%;
+  }
 }

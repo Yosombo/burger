@@ -1,2 +1,6 @@
+.OrderSummery ul {
+  list-style: none;
+}
 .OrderSummery {
+  line-height: 1.7;
 }

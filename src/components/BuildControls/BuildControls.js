@@ -1,12 +1,12 @@
-import React from "react";
+import React, {useContext}from "react";
 import css from "./BuildControls.module.css";
 import BuildControl from "../BuildControl/BuildControl";
-import * as actions from '../../redux/actions/BurgerActions'
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import BurgerContext from '../../Context/BurgerContext'
 
 function BuildControls(props) {
-  const disabledIngerdients = { ...props.burgeriinOrts };
+  const burgerCtx = useContext(BurgerContext);
+
+  const disabledIngerdients = {...burgerCtx.burger.ingredients};
 
   for (let key in disabledIngerdients) {
     disabledIngerdients[key] = disabledIngerdients[key] <= 0;
@@ -14,43 +14,24 @@ function BuildControls(props) {
   return (
     <div className={css.BuildControls}>
       <p>
-        Total price: <strong>{props.price}</strong>
+        Total price: <strong>${burgerCtx.burger.totalPrice}</strong>
       </p>
-      {/* orts ni = text  */}
-      {Object.keys(props.ingredientNames).map((el) => (
+      {Object.keys(burgerCtx.burger.ingredientNames).map((el) => (
         <BuildControl
           key={el}
-          ortsNemeh={props.ortsNemeh}
-          ortsHasah={props.ortsHasah}
           disabled={disabledIngerdients}
           type={el}
-          orts={props.ingredientNames[el]}
+          orts={burgerCtx.burger.ingredientNames[el]}
         />
       ))}
       <button
         onClick={props.showConfirmModal}
         className={css.OrderButton}
-        disabled={!props.purchasing}
+        disabled={!burgerCtx.burger.purchasing}
       >
         Order
       </button>
     </div>
   );
 }
-const mapStateToProps = state =>{
-  return{
-    burgeriinOrts: state.BurgerReducer.ingredients,
-    price: state.BurgerReducer.totalPrice,
-    purchasing: state.BurgerReducer.purchasing,
-    ingredientNames: state.BurgerReducer.ingredientNames
-  }
-}
-
-const mapDispatchToProps = dispatch =>{
-  return{
-    ortsNemeh: ortsNer => dispatch(actions.addIngredient(ortsNer)),
-    ortsHasah: ortsNer => dispatch(actions.removeIngredient(ortsNer))
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(BuildControls)) ;
+export default BuildControls;
