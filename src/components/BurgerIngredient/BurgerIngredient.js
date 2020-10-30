@@ -20,21 +20,21 @@ function BurgerIngredient(props) {
     );
   if (props.type === "salad")
     return (
-    <div data-aos="fade-right"> 
+    <div data-aos="flip-right"> 
      <img className={css.Salad} src={saladImg} alt="meat"/>
     </div>
     )
      
   if (props.type === "cheese")
-    return <div data-aos="fade-right">
+    return <div data-aos="flip-right">
       <img className={css.Cheese} src={cheeseImg} alt="meat"/>
     </div>;
   if (props.type === "meat")
-    return <div data-aos="fade-left" >
+    return <div data-aos="flip-left" >
       <img className={css.Meat} src={meatImg} alt="meat"/>
     </div>;
   if (props.type === "bacon")
-    return <div data-aos="fade-left">
+    return <div data-aos="flip-left">
        <img className={css.Bacon} src={baconImg} alt="meat"/>
     </div>;
 

@@ -10,6 +10,7 @@ import {BurgerStore} from '../../Context/BurgerContext'
 import {OrderStore} from '../../Context/OrderContext'
 import UserContext from '../../Context/UserContext'
 
+
 const BurgerPage = React.lazy(()=>{
   return import("../BurgerPage/BurgerPage")
 })
@@ -45,6 +46,7 @@ const App = props => {
 const toggleSidebar = () =>{
   setShowSidebar(prevState=> !prevState)
 }
+
 
     return (
     <div className={css.App}>

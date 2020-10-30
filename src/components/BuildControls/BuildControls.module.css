@@ -4,26 +4,27 @@
   width: 80vw;
   left: 50%;
   transform: translateX(-50%);
-  height: 40vh;
+  height: 35vh;
   place-content: center;
   display: flex;
   flex-flow: column;
   align-items: center;
-  padding: 10px 0;
+  padding-bottom: 0.5rem;
   color: white;
 }
 .BuildControls p {
-  font-size: 28px;
-  margin-bottom: 20px;
+  font-size: 24px;
+  position: absolute;
+  top: -50px;
 }
 .OrderButton {
-  margin-top: 20px;
-  background-color: #ffee0052;
+  margin-top: 5px;
+  background-color: transparent;
   outline: none;
   cursor: pointer;
-  border: 1px solid #ffee00;
+  border: 1px solid #0ff;
   border-radius: 5px;
-  color: #ffee00;
+  color: rgb(174, 243, 36);
   font-family: inherit;
   font-size: 1.2em;
   padding: 10px 50px;
@@ -32,9 +33,10 @@
 
 .OrderButton:hover,
 .OrderButton:active {
-  background-color: rgba(162, 245, 9, 0.411);
-  border: 1px solid yellowgreen;
+  background-color: #0ff;
+  border: 1px solid #0ff;
   color: white;
+  box-shadow: 0px 0px 20px 0px #0ff;
 }
 
 .OrderButton:disabled {
@@ -47,7 +49,20 @@
 .OrderButton:not(:disabled) {
   animation: enable 0.3s linear;
 }
-
+@media (min-width: 500px) and (min-height: 400px) {
+  .BuildControls {
+    width: 700px;
+    height: 40vh;
+    padding-bottom: 3rem;
+  }
+  .BuildControls p {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  .OrderButton {
+    margin-top: 20px;
+  }
+}
 @keyframes enable {
   0% {
     transform: scale(1);

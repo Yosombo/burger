@@ -18,6 +18,7 @@ const BurgerPage =(props) =>{
 
   const showConfirmModal = () => {
     setConfirmOrder(true);
+    
   };
 
   const closeConfirmModal = () => {

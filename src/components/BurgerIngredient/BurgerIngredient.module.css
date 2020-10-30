@@ -1,41 +1,42 @@
 .Meat {
-  width: 300px;
+  width: 270px;
   position: absolute;
-  top: 140px;
+  top: 90px;
   transform: translateX(-50%);
   z-index: 8;
 }
 .Salad {
-  width: 300px;
+  width: 270px;
   position: absolute;
-  top: 90px;
+  top: 40px;
   transform: translateX(-50%);
   z-index: 9;
 }
 .Bacon {
-  width: 300px;
+  width: 270px;
   position: absolute;
-  top: 190px;
+  top: 140px;
   transform: translateX(-50%);
   z-index: 9;
 }
 .Cheese {
-  width: 300px;
+  width: 270px;
   position: absolute;
-  top: 120px;
+  top: 70px;
   transform: translateX(-50%);
   z-index: 6;
 }
 .BreadTop {
-  width: 300px;
+  width: 270px;
+  top: -40px;
   position: absolute;
   transform: translateX(-50%);
   z-index: 10;
 }
 .BreadBottom {
-  width: 300px;
+  width: 270px;
   position: absolute;
-  top: 220px;
+  top: 160px;
   transform: translateX(-50%);
   z-index: 10;
 }
@@ -50,6 +51,7 @@
   }
   .BreadTop {
     width: 400px;
+    top: 0px;
   }
   .Cheese {
     width: 400px;

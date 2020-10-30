@@ -6,8 +6,9 @@
   cursor: pointer;
   font: inherit;
   padding: 10px;
-  margin: 10px;
+  margin: 0px;
   font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .Button:first-of-type {
@@ -21,9 +22,17 @@
 }
 
 .Success {
-  color: #5c9210;
+  color: rgb(198, 255, 201);
+  text-shadow: 0 0 2px #fff, 0 0 10px #09ff00, 0 0 20px #09ff00;
 }
 
 .Danger {
-  color: #944317;
+  color: rgb(255, 198, 252);
+  text-shadow: 0 0 2px #fff, 0 0 10px #d400ff, 0 0 20px #d400ff;
+}
+@media (min-width: 500px) and (min-height: 400px) {
+  .Button {
+    padding: 10px;
+    margin: 10px;
+  }
 }

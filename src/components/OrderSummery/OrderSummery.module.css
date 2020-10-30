@@ -1,6 +1,46 @@
-.OrderSummery ul {
-  list-style: none;
+.OrderSummery {
+  background-color: transparent;
+  color: #00e0fd;
+  padding: 0.4rem 2rem;
+  line-height: 1.1;
+}
+.Title {
+  text-align: center;
+  font-size: 1.6rem;
+}
+.Number {
+  font-size: 1.4rem;
+}
+.Question {
+  display: none;
+}
+.OrderSummery p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
 }
 .OrderSummery {
-  line-height: 1.7;
+  background-color: transparent;
+  color: #00e0fd;
+}
+.OrderSummery ul {
+  list-style: none;
+  padding-left: 2rem;
+}
+
+.Line {
+  width: 100%;
+  height: 1px;
+  background-color: #00e0fd;
+  margin: 1rem 0;
+}
+@media (min-width: 500px) and (min-height: 400px) {
+  .OrderSummery {
+    line-height: 1.7;
+  }
+  .Question {
+    display: block;
+  }
+  .OrderSummery p {
+    font-size: 1.4rem;
+  }
 }

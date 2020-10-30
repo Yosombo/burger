@@ -1,24 +1,27 @@
 .Login {
-  font-family: "Rajdhani", sans-serif;
-  width: 100%;
-  border: 1px solid #eee;
+  font-family: "Architects Daughter", cursive;
+  width: 90%;
+  border: 1px solid #00e0fd;
   box-sizing: border-box;
   border-radius: 10px;
   padding: 20px;
   text-align: center;
   margin: 0 auto;
-  font-size: 1.2rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  top: 50%;
 }
 .Login input {
   background-color: transparent;
-  font-family: "Rajdhani", sans-serif;
+  font-family: "Architects Daughter", cursive;
   display: block;
   font-size: 18px;
   padding: 5px;
-  width: 80%;
-  color: white;
+  width: 95%;
+  color: #00e0fd;
   border: none;
-  border-bottom: 1px solid rgb(126, 126, 126);
+  border-bottom: 1px solid #00e0fd;
   margin: 20px auto;
   border-radius: 0;
 }
@@ -26,19 +29,20 @@
   color: rgb(180, 180, 180);
 }
 .Login input:active {
-  color: white;
+  color: #00e0fd;
   background-color: transparent;
 }
 .Login input:focus {
+  color: #00e0fd;
   outline: none;
   border-radius: 0;
   background-color: rgb(26, 26, 26);
 }
-@media (min-width: 600px) {
+@media (min-width: 500px) {
   .Login {
-    width: 80%;
+    width: 40%;
   }
   .Login input {
-    width: 70%;
+    width: 80%;
   }
 }

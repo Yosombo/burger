@@ -7,17 +7,20 @@
   align-items: center;
 }
 .MenuItem a {
-  font-family: "Rajdhani", sans-serif;
+  font-family: "Architects Daughter", cursive;
   display: block;
   color: white;
+  font-size: 1rem;
   text-decoration: none;
   height: 100%;
   padding: 16px 10px;
+  transition: all 0.3s ease-out;
 }
 .MenuItem a:hover,
 .MenuItem a:active,
 .MenuItem a.active {
-  color: #40a4c8;
+  color: rgb(180, 255, 249) !important;
+  text-shadow: 0 0 10px #fff, 0 0 20px #00e1ff, 0 0 27px #00e1ff;
 }
 
 @media (min-width: 500px) {
@@ -30,6 +33,7 @@
   }
   .MenuItem a {
     color: white;
+    font-size: 1.3rem;
     text-decoration: none;
     height: 100%;
     padding: 16px 10px;
@@ -38,6 +42,5 @@
   .MenuItem a:active,
   .MenuItem a.active {
     color: #00e0fd;
-    transform: scale(1.1);
   }
 }

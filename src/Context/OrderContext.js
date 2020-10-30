@@ -10,9 +10,9 @@ const inititalState ={
     // Save Order
     saving: false,
     finished: false,
-    error: null
-
+    error: null,
 }
+
 export const OrderStore = props =>{
     const[state, setState]=useState(inititalState)
     const loadOrders=(userId, token)=>{
@@ -22,6 +22,7 @@ export const OrderStore = props =>{
          axios.get(`/orders.json?auth=${token}&orderBy="userId"&equalTo="${userId}"`)
          .then(response =>{
              setState({...state, orders: Object.entries(response.data).reverse()})
+             
         }).catch(err => setState({...state, error: err.message}))
     }
     return (

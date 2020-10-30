@@ -2,6 +2,7 @@ import React, {useContext}from "react";
 import css from "./BuildControls.module.css";
 import BuildControl from "../BuildControl/BuildControl";
 import BurgerContext from '../../Context/BurgerContext'
+import CurrencyFormat from 'react-currency-format';
 
 function BuildControls(props) {
   const burgerCtx = useContext(BurgerContext);
@@ -14,7 +15,7 @@ function BuildControls(props) {
   return (
     <div className={css.BuildControls}>
       <p>
-        Total price: <strong>${burgerCtx.burger.totalPrice}</strong>
+        Total price: <strong>{<CurrencyFormat decimalScale={2} value={burgerCtx.burger.totalPrice} displayType={'text'} thousandSeparator={true} prefix={'$'}/>}</strong>
       </p>
       {Object.keys(burgerCtx.burger.ingredientNames).map((el) => (
         <BuildControl

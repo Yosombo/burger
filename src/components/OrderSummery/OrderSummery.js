@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import Button from "../General/Button/Button";
 import css from "./OrderSummery.module.css";
+import CurrencyFormat from 'react-currency-format';
 import BurgerContext from '../../Context/BurgerContext'
 
 
@@ -9,18 +10,18 @@ function OrderSummery(props) {
 
   return (
     <div className={css.OrderSummery}>
-      <h3>Your order</h3>
+      <p className={css.Title}>Your order</p>
       <p>Ingredients</p>
       <ul>
         {Object.keys(burgerCtx.burger.ingredients).map((el) => (
           <li key={el}>
-            {burgerCtx.burger.ingredientNames[el]} : {burgerCtx.burger.ingredients[el]}
+            {burgerCtx.burger.ingredientNames[el]}<span className={css.Number}> : {burgerCtx.burger.ingredients[el]}</span>
           </li>
         ))}
       </ul>
-        <hr></hr>
-        <p><strong>Total price : ${burgerCtx.burger.totalPrice}</strong></p>
-      <p>Do you want to continue?</p>
+        <div className={css.Line}></div>
+        <p><strong>Total price : {<CurrencyFormat decimalScale={2} value={burgerCtx.burger.totalPrice} displayType={'text'} thousandSeparator={true} prefix={'$'}/>}</strong></p>
+      <p className={css.Question}>Do you want to continue?</p>
       <Button clicked={props.onCancel} btnType="Danger" text={`Cancel`}/>
       <Button clicked={props.onContinue} btnType="Success" text={`Continue`}/>
     </div>

@@ -1,18 +1,16 @@
 .BuildControl {
   width: 320px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  margin: 5px 0;
 }
 
 .BuildControl button {
   display: block;
   font: inherit;
-  padding: 5px;
-  margin: 0 5px;
-  width: 80px;
+  padding: 3px;
+  width: 70px;
   border: 1px solid #00e0fd;
   cursor: pointer;
   outline: none;
@@ -21,7 +19,7 @@
 }
 
 .BuildControl button:disabled {
-  background-color: #525252;
+  background-color: #5252527a;
   border: none;
   color: rgb(100, 100, 100);
   cursor: default;
@@ -29,12 +27,12 @@
 
 .BuildControl button:hover:disabled {
   color: rgb(37, 37, 37);
-  background-color: #525252;
+  background-color: #5252527a;
   cursor: not-allowed;
 }
 
 .Label {
-  font-size: 1.2rem;
+  font-size: 1rem;
   padding: 10px;
   font-weight: bold;
   width: 100px;
@@ -61,6 +59,18 @@
 .BuildControl .More:hover,
 .BuildControl .More:active {
   border: 1px solid #00fd00;
-
   color: white;
+}
+
+@media (min-width: 500px) and (min-height: 400px) {
+  .BuildControls {
+    font-size: 1.2rem;
+  }
+  .Label {
+    font-size: 1.2rem;
+  }
+  .BuildControl button {
+    padding: 5px;
+    margin: 0 5px;
+  }
 }

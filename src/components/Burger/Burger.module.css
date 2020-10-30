@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Warnes&display=swap");
 .Burger {
   width: 100%;
-  height: 40vh;
   margin: auto;
   text-align: center;
   font-weight: bold;
@@ -14,76 +13,48 @@
   font-size: 1.5rem;
   margin: 20px auto;
   position: absolute;
-  top: 120px;
+  top: 70px;
   left: 50%;
   transform: translateX(-50%);
   color: #fff;
   animation: glow 5s ease-in-out infinite alternate;
 }
-
-@keyframes glow {
-  0% {
-    text-shadow: 0 0 3px #fff, 0 0 7px #fff, 0 0 12px #f8afff, 0 0 17px #f8afff,
-      0 0 22px #f8afff, 0 0 27px #f8afff, 0 0 32px #f8afff;
-  }
-  25% {
-    text-shadow: 0 0 5px #fff, 0 0 15px #fff, 0 0 22px #00e1ff, 0 0 29px #00e1ff,
-      0 0 36px #00e1ff, 0 0 43px #00e1ff, 0 0 50px #00e1ff;
-  }
-  50% {
-    text-shadow: 0 0 3px #fff, 0 0 7px #fff, 0 0 12px #f8afff, 0 0 17px #f8afff,
-      0 0 22px #f8afff, 0 0 27px #f8afff, 0 0 32px #f8afff;
-  }
-  51% {
-    text-shadow: 0 0 0 #fff, 0 0 0 #fff, 0 0 0 #f8afff, 0 0 0 #f8afff,
-      0 0 0 #f8afff, 0 0 0 #f8afff, 0 0 0 #f8afff;
-    color: transparent;
-  }
-  52% {
-    text-shadow: 0 0 0 #fff, 0 0 0 #fff, 0 0 0 #f8afff, 0 0 0 #f8afff,
-      0 0 0 #f8afff, 0 0 0 #f8afff, 0 0 0 #f8afff;
-    color: transparent;
-  }
-  53% {
-    text-shadow: 0 0 5px #fff, 0 0 15px #fff, 0 0 22px #00e1ff, 0 0 29px #00e1ff,
-      0 0 36px #00e1ff, 0 0 43px #00e1ff, 0 0 50px #00e1ff;
-  }
-  54% {
-    text-shadow: 0 0 0 #fff, 0 0 0 #fff, 0 0 0 #f8afff, 0 0 0 #f8afff,
-      0 0 0 #f8afff, 0 0 0 #f8afff, 0 0 0 #f8afff;
-    color: transparent;
-  }
-  57% {
-    text-shadow: 0 0 0 #fff, 0 0 0 #fff, 0 0 0 #f8afff, 0 0 0 #f8afff,
-      0 0 0 #f8afff, 0 0 0 #f8afff, 0 0 0 #f8afff;
-    color: transparent;
-  }
-  58% {
-    text-shadow: 0 0 5px #fff, 0 0 15px #fff, 0 0 22px #00e1ff, 0 0 29px #00e1ff,
-      0 0 36px #00e1ff, 0 0 43px #00e1ff, 0 0 50px #00e1ff;
-  }
-  59% {
-    text-shadow: 0 0 0 #fff, 0 0 0 #fff, 0 0 0 #f8afff, 0 0 0 #f8afff,
-      0 0 0 #f8afff, 0 0 0 #f8afff, 0 0 0 #f8afff;
-    color: transparent;
-  }
-  90% {
-    text-shadow: 0 0 0 #fff, 0 0 0 #fff, 0 0 0 #f8afff, 0 0 0 #f8afff,
-      0 0 0 #f8afff, 0 0 0 #f8afff, 0 0 0 #f8afff;
-    color: transparent;
-  }
-
-  90% {
-    text-shadow: 0 0 3px #fff, 0 0 7px #fff, 0 0 12px #f8afff, 0 0 17px #f8afff,
-      0 0 22px #f8afff, 0 0 27px #f8afff, 0 0 32px #f8afff;
-    color: transparent;
-  }
-  100% {
-    text-shadow: 0 0 5px #fff, 0 0 15px #fff, 0 0 22px #00e1ff, 0 0 29px #00e1ff,
-      0 0 36px #00e1ff, 0 0 43px #00e1ff, 0 0 50px #00e1ff;
-  }
+.SaladNumber {
+  position: absolute;
+  top: 30px;
+  left: 10%;
+  font-size: 3rem;
+  transform: rotate(-20deg);
+  color: rgb(186, 255, 180) !important;
+  text-shadow: 0 0 10px #73ff00, 0 0 20px #73ff00, 0 0 27px #73ff00;
 }
-
+.CheeseNumber {
+  position: absolute;
+  top: 60px;
+  right: 10%;
+  font-size: 3rem;
+  transform: rotate(40deg);
+  color: rgb(254, 255, 193) !important;
+  text-shadow: 0 0 10px #fbff00, 0 0 20px #fbff00, 0 0 27px #fbff00;
+}
+.MeatNumber {
+  position: absolute;
+  top: 100px;
+  left: 11%;
+  font-size: 3rem;
+  transform: rotate(20deg);
+  color: rgb(243, 180, 255) !important;
+  text-shadow: 0 0 10px #e100ff, 0 0 20px #e100ff, 0 0 27px #e100ff;
+}
+.BaconNumber {
+  position: absolute;
+  top: 140px;
+  right: 10%;
+  font-size: 3rem;
+  transform: rotate(-30deg);
+  color: rgb(255, 118, 141) !important;
+  text-shadow: 0 0 10px #ff0077, 0 0 20px #ff0077, 0 0 27px #ff0077;
+}
 @media (min-width: 500px) and (min-height: 400px) {
   .Burger {
     width: 700px;
@@ -92,5 +63,104 @@
   .Burger p {
     font-size: 2rem;
     top: 160px;
+  }
+  .SaladNumber {
+    top: 90px;
+    left: 70px;
+  }
+  .CheeseNumber {
+    top: 170px;
+    right: 70px;
+  }
+  .MeatNumber {
+    top: 220px;
+    left: 80px;
+  }
+  .BaconNumber {
+    top: 280px;
+    right: 90px;
+  }
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #fff, 0 0 15px #fff, 0 0 22px #00e1ff, 0 0 29px #00e1ff,
+      0 0 36px #00e1ff, 0 0 43px #00e1ff, 0 0 50px #00e1ff;
+    opacity: 1;
+  }
+  20% {
+    text-shadow: 0 0 3px #fff, 0 0 7px #fff, 0 0 12px #f8afff, 0 0 17px #f8afff,
+      0 0 22px #f8afff, 0 0 27px #f8afff, 0 0 32px #f8afff;
+    opacity: 1;
+  }
+  35% {
+    text-shadow: 0 0 5px #fff, 0 0 15px #fff, 0 0 22px #00e1ff, 0 0 29px #00e1ff,
+      0 0 36px #00e1ff, 0 0 43px #00e1ff, 0 0 50px #00e1ff;
+    opacity: 1;
+  }
+  50% {
+    text-shadow: 0 0 3px #fff, 0 0 7px #fff, 0 0 12px #f8afff, 0 0 17px #f8afff,
+      0 0 22px #f8afff, 0 0 27px #f8afff, 0 0 32px #f8afff;
+    opacity: 1;
+  }
+  51% {
+    text-shadow: 0 0 0 #fff, 0 0 0 #fff, 0 0 0 #f8afff, 0 0 0 #f8afff,
+      0 0 0 #f8afff, 0 0 0 #f8afff, 0 0 0 #f8afff;
+    opacity: 0;
+  }
+  52% {
+    text-shadow: 0 0 0 #fff, 0 0 0 #fff, 0 0 0 #f8afff, 0 0 0 #f8afff,
+      0 0 0 #f8afff, 0 0 0 #f8afff, 0 0 0 #f8afff;
+    opacity: 0;
+  }
+  53% {
+    text-shadow: 0 0 5px #fff, 0 0 15px #fff, 0 0 22px #00e1ff, 0 0 29px #00e1ff,
+      0 0 36px #00e1ff, 0 0 43px #00e1ff, 0 0 50px #00e1ff;
+    opacity: 1;
+  }
+  54% {
+    text-shadow: 0 0 0 #fff, 0 0 0 #fff, 0 0 0 #f8afff, 0 0 0 #f8afff,
+      0 0 0 #f8afff, 0 0 0 #f8afff, 0 0 0 #f8afff;
+    opacity: 0;
+  }
+  56% {
+    text-shadow: 0 0 0 #fff, 0 0 0 #fff, 0 0 0 #f8afff, 0 0 0 #f8afff,
+      0 0 0 #f8afff, 0 0 0 #f8afff, 0 0 0 #f8afff;
+    opacity: 0;
+  }
+  57% {
+    text-shadow: 0 0 0 #fff, 0 0 0 #fff, 0 0 0 #f8afff, 0 0 0 #f8afff,
+      0 0 0 #f8afff, 0 0 0 #f8afff, 0 0 0 #f8afff;
+    opacity: 1;
+  }
+  70% {
+    text-shadow: 0 0 5px #fff, 0 0 15px #fff, 0 0 22px #00e1ff, 0 0 29px #00e1ff,
+      0 0 36px #00e1ff, 0 0 43px #00e1ff, 0 0 50px #00e1ff;
+    opacity: 1;
+  }
+  87% {
+    text-shadow: 0 0 0 #fff, 0 0 0 #fff, 0 0 0 #f8afff, 0 0 0 #f8afff,
+      0 0 0 #f8afff, 0 0 0 #f8afff, 0 0 0 #f8afff;
+    opacity: 1;
+  }
+  88% {
+    text-shadow: 0 0 0 #fff, 0 0 0 #fff, 0 0 0 #f8afff, 0 0 0 #f8afff,
+      0 0 0 #f8afff, 0 0 0 #f8afff, 0 0 0 #f8afff;
+    opacity: 0;
+  }
+  90% {
+    text-shadow: 0 0 0 #fff, 0 0 0 #fff, 0 0 0 #f8afff, 0 0 0 #f8afff,
+      0 0 0 #f8afff, 0 0 0 #f8afff, 0 0 0 #f8afff;
+    opacity: 0;
+  }
+  91% {
+    text-shadow: 0 0 3px #fff, 0 0 7px #fff, 0 0 12px #f8afff, 0 0 17px #f8afff,
+      0 0 22px #f8afff, 0 0 27px #f8afff, 0 0 32px #f8afff;
+    opacity: 1;
+  }
+  100% {
+    text-shadow: 0 0 5px #fff, 0 0 15px #fff, 0 0 22px #00e1ff, 0 0 29px #00e1ff,
+      0 0 36px #00e1ff, 0 0 43px #00e1ff, 0 0 50px #00e1ff;
+    opacity: 1;
   }
 }

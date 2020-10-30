@@ -2,10 +2,10 @@
   width: 80%;
   border-bottom: 1px solid #eee;
   padding: 10px;
-  margin: 10px auto;
+  margin: 20px auto;
   line-height: 1.6;
-  color: white;
-  font-size: 1.3rem;
+  color: rgb(231, 239, 241);
+  font-size: 1.4rem;
 }
 @media (min-width: 500px) and (min-height: 400px) {
   .Order {

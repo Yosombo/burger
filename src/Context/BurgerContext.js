@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState ,useEffect} from 'react'
 import  axios  from '../axiosOrders';
+
 const BurgerContext = React.createContext()
 const initialState ={
     ingredients: {
@@ -10,13 +11,13 @@ const initialState ={
       },
 
     totalPrice: 0,
+    getPrice:0,
     purchasing: false,
-
     ingredientNames: {
-        salad: `Salad`,
-        meat: `Meat`,
-        cheese: `Cheese`,
-        bacon: `Bacon`,
+        salad: `SALAD`,
+        cheese: `CHEESE`,
+        meat: `MEAT`,
+        bacon: `BACON`,
       },
     saving: false,
     finished: false,
@@ -24,14 +25,24 @@ const initialState ={
 }
 
 const INGREDIENT_PRICES = {
-    salad: 1,
-    meat: 4,
-    cheese: 1,
-    bacon: 1,
+    salad: 1.49,
+    meat: 4.49,
+    cheese: 1.19,
+    bacon: 1.59,
   };
   
 export const BurgerStore = props =>{
+    
     const[burger, setBurger] = useState(initialState);
+ 
+
+    const useFinished=(func) =>{
+        useEffect(() => {
+            if(burger.finished && !burger.error){
+           func()
+          }
+        },[burger.finished])
+    }   
     const  saveBurger =(newOrder, token)=>{
     setBurger({
         ...burger, 
@@ -63,7 +74,10 @@ export const BurgerStore = props =>{
         setBurger({
             ...burger, ingredients:{...burger.ingredients, [orts]: burger.ingredients[orts]+1},
             totalPrice: burger.totalPrice + INGREDIENT_PRICES[orts],
-            purchasing: true}) 
+     
+            purchasing: true},
+            )
+             
     }
 
     const removeIngredient =(orts) =>{
@@ -75,7 +89,7 @@ export const BurgerStore = props =>{
             purchasing: newPrice>0})
     }
     return (
-        <BurgerContext.Provider value={{burger, addIngredient, removeIngredient, clearBurger, saveBurger}}>
+        <BurgerContext.Provider value={{burger, addIngredient, removeIngredient, clearBurger, saveBurger, useFinished}}>
             {props.children}
         </BurgerContext.Provider>
     )

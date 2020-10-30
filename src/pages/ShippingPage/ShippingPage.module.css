@@ -1,15 +1,30 @@
 .ShippingPage {
-  width: 80%;
-  margin: 20px auto;
+  width: 100%;
   text-align: center;
+  margin: 0 auto;
+  margin-bottom: 2rem;
 }
-.ShippingPage h3 {
-  color: #00e0fd;
-  margin-top: 10px;
-  margin-bottom: 20px;
+
+.ShippingPage h1 {
+  color: rgb(180, 255, 249) !important;
+  text-shadow: 0 0 10px #00e1ff, 0 0 20px #00e1ff, 0 0 27px #00e1ff;
+  letter-spacing: 8px;
+  transform: translateY(-20px);
 }
+.Buttons {
+  position: absolute;
+  height: 38vh;
+  bottom: 0;
+}
+
 @media (min-width: 600px) {
   .ShippingPage {
     width: 700px;
+  }
+  .Buttons {
+    position: static;
+  }
+  .ShippingPage h1 {
+    transform: translateY(10px);
   }
 }

@@ -15,6 +15,9 @@
 }
 
 @media (max-width: 500px) {
+  .Toolbar {
+    height: 50px;
+  }
   .HideoOnMobile {
     display: none;
   }

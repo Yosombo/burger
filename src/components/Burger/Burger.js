@@ -18,14 +18,14 @@ function Burger(props) {
   return (
     
     <div className={css.Burger}>
-
-      
+<div className={css.SaladNumber}>{burgerCtx.burger.ingredients.salad > 0 ? burgerCtx.burger.ingredients.salad : null}</div>
+<div className={css.CheeseNumber}>{burgerCtx.burger.ingredients.cheese > 0 ? burgerCtx.burger.ingredients.cheese: null}</div>
+<div className={css.MeatNumber}>{burgerCtx.burger.ingredients.meat > 0 ? burgerCtx.burger.ingredients.meat: null}</div>
+<div className={css.BaconNumber}>{burgerCtx.burger.ingredients.bacon > 0 ? burgerCtx.burger.ingredients.bacon: null}</div>
     <BurgerIngredient type="breadTop" />
       {content}
       <BurgerIngredient type="breadBottom" />
-
-
-      
+     
     </div>
   );
 }
