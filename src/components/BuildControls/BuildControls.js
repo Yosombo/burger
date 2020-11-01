@@ -15,7 +15,7 @@ function BuildControls(props) {
   return (
     <div className={css.BuildControls}>
       <p>
-        Total price: <strong>{<CurrencyFormat decimalScale={2} value={burgerCtx.burger.totalPrice} displayType={'text'} thousandSeparator={true} prefix={'$'}/>}</strong>
+        Total price: <strong>{burgerCtx.burger.totalPrice > 0 ? <CurrencyFormat decimalScale={2} value={burgerCtx.burger.totalPrice} displayType={'text'} thousandSeparator={true} prefix={'$'}/> : '$'+0}</strong>
       </p>
       {Object.keys(burgerCtx.burger.ingredientNames).map((el) => (
         <BuildControl

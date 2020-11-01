@@ -9,11 +9,9 @@ import Logout from '../../components/Logout/Logout'
 import {BurgerStore} from '../../Context/BurgerContext'
 import {OrderStore} from '../../Context/OrderContext'
 import UserContext from '../../Context/UserContext'
+import BurgerPage from '../BurgerPage/BurgerPage'
 
 
-const BurgerPage = React.lazy(()=>{
-  return import("../BurgerPage/BurgerPage")
-})
 const OrderPage = React.lazy(()=>{
   return import("../OrderPage/OrderPage")
 })
